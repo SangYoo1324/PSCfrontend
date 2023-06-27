@@ -1,0 +1,199 @@
+.title{
+  margin-top: 3rem;
+}
+
+.line{
+  height: 1px;
+  background-color: white;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+section{
+  background-color: #1e1f24;
+  color: white;
+  min-height: 75vh;
+}
+.big-container{
+  background-color: black;
+  margin-top: 2vh;
+  padding: 3rem 4rem;
+}
+
+.wrap{
+  padding: 1rem;
+}
+
+.form-label{
+  margin-right: 10%;
+}
+
+/*left */
+.left{
+  border-right: 1px solid white;
+}
+
+input[type=text], input[type=password], input[type=email]{
+  border-radius: 0;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid white;
+  height: 40px;
+  color: white;
+  background-color: black;
+}
+
+#username:focus, #password:focus, #email:focus,
+#usernameConfirm:focus, #passwordConfirm:focus, #emailConfirm:focus
+{
+  border: none;
+  border-bottom: 1px solid red ;
+  outline: none;
+}
+
+#emailHelp{
+  color: white;
+  font-size: 1rem;
+}
+
+.create_account{
+  color:black;
+  text-decoration: none;
+  text-align: center;
+  width: 85%;
+  margin: 1rem auto;
+  padding: 0.8rem 0;
+  background-color: #cc181e;
+  border-radius: 0.2rem;
+}
+.google_login{
+  color:black;
+  text-decoration: none;
+  text-align: center;
+  width: 85%;
+  margin: 1rem auto;
+  padding: 0.8rem 0;
+  background-color: white;
+  border-radius: 0.2rem;
+}
+
+.login-btn{
+  background-color: #cc181e;
+  padding: 0.5rem 5rem;
+
+}
+.forget-password{
+  margin-left: 2.5rem;
+  color: #cc181e;
+}
+
+input[type=checkbox]{
+  width: 1rem;
+}
+
+.btn-wrap{
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/*left:end */
+
+/*right */
+.right{
+  padding-left: 5rem;
+}
+/*right:end */
+
+
+/*checkbox related css */
+.wrap input[type="checkbox"]{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+.wrap input[type="checkbox"] + label{
+  display:inline-block;
+  position:relative;
+  padding-left:40px;
+  cursor:pointer;
+}
+.wrap input[type="checkbox"] + label:before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:9px;
+  width:18px;
+  height:18px;
+  text-align:center;
+  background:black;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+}
+
+/* 보여질 부분의 스타일을 추가하면 된다. */
+.wrap input[type="checkbox"]:checked + label:after{
+  content: '';
+  position:absolute;
+  top:9px;
+  left:0;
+  width:18px;
+  height:18px;
+  background-color:red;
+}
+/*checkbox related css:end */
+
+@media (max-width: 1024px) {
+
+  .title{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .big-container{
+    font-size: 1.2rem;
+  }
+
+  .left{
+    border-right: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 3rem;
+  }
+
+  input[type=text], input[type=password], input[type=email]{
+
+    width: 100%;
+
+
+  }
+
+
+.right{
+  padding-top: 3rem;
+  padding-left: 0rem;
+}
+
+  .forget-password{
+    margin-left: 1rem;
+    font-size: 0.7rem;
+  }
+
+  .create_account, .google_login{
+    width: 100%;
+  }
+
+  .explanation{
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .line{
+    margin-top: 1rem;
+  }
+
+}

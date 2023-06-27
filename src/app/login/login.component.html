@@ -1,0 +1,90 @@
+<section>
+  <div class="container">
+    <div class="title">
+      <h1>Login</h1>
+    </div>
+  </div>
+  <div class="container big-container">
+    <div class="row">
+      <div class="col-lg-5 left">
+
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="" id="username" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text pt-3">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="" id="password">
+          </div>
+          <div class="mb-3 wrap">
+            <input id="agree" type="checkbox">
+            <label for="agree">
+              <span>remember me</span>
+            </label>
+          </div>
+          <div class="login-password-wrap">
+            <button type="submit" class="btn login-btn">Login</button>
+            <a href="#" class="forget-password">forget Password?</a>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="col-lg-7 right">
+        <div class="wrap">
+          <h1>New Customer?</h1>
+          <p>Creating an account is Quick and Easy</p>
+
+          <div class="btn_wrap">
+            <a class="create_account d-block" href="/join">Create Account</a>
+            <a type="button" class="google_login d-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Login with Social Media &nbsp;<i class="fa-solid fa-hashtag"></i>
+            </a>
+          </div>
+
+          <div class="line"></div>
+          <p class="explanation">Login with Google will automatically process registration!</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Choose Social Login Method</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="isLoggedin === false" class="social-btn-wrap">
+          <asl-google-signin-button width="350" size="medium" type="standard"></asl-google-signin-button>
+          <div class="facebook_login"> <i class="fa-brands fa-facebook-f"></i> &nbsp;&nbsp; <span>Login with Facebook</span>  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        </div>
+
+        <div *ngIf="isLoggedin === true">
+          <div class="form-group">
+            <img [src]="socialUser?.photoUrl" alt="">
+            <h2>Hi, {{socialUser?.firstName}}</h2>
+            <p>Please proceed to 1 touch LogIn!</p>
+            <a class="process">continue ></a>
+
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+
+</style>

@@ -1,0 +1,36 @@
+
+
+<nav  class="navbar navbar-expand-lg navbar-dark  fixed-top padding" >
+  <!--  transparent only when isAtTop , toggleBtnNotActive both true-->
+  <div class="container-fluid">
+    <a routerLink="/"
+       class="navbar-brand" href="#"><b>&nbsp;<span>PUGET SOUND CUSTOMS</span></b></a>
+    <button #navBarToggler class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end"   id="navbarSupportedContent" #navBarContent>
+      <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+          <a routerLinkActive="router-active" routerLink="/visitorsInfo" class="nav-link active" aria-current="page" >Gaming PC</a>
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="router-active" routerLink="/childrenYouth" class="nav-link active" aria-current="page"  >Workstation PC</a>
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="router-active" routerLink="/ministries" class="nav-link active" aria-current="page" >Accessories</a>
+        </li>
+        <li class="nav-item">
+          <div routerLinkActive="router-active" class="nav-link active" aria-current="page" >
+            <button routerLink="/login" type="button" id="login-btn" class="btn btn-success">Login</button>
+            &nbsp; &nbsp;
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+

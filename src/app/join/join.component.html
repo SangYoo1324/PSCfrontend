@@ -1,0 +1,58 @@
+<section>
+  <div class="container">
+    <div class="title">
+      <h1>SignUp</h1>
+    </div>
+  </div>
+
+  <div class="container big-container">
+        <form class="row">
+          <div class="col-lg-6 left">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="" id="username" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3 ">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="" id="password">
+          </div>
+
+            <div class="mb-3 ">
+              <label for="email" class="form-label">email</label>
+              <input type="password" class="" id="email">
+            </div>
+
+
+          </div>
+
+
+            <div class="col-lg-6 right">
+              <div class="mb-3">
+                <label for="username" class="form-label">Confirm Username</label>
+                <input type="text" class="" id="usernameConfirm" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Confirm Password</label>
+                <input type="password" class="" id="passwordConfirm">
+              </div>
+              <div class="mb-3">
+                <label for="emailConfirm" class="form-label">Confirm email</label>
+                <input type="email" class="" id="emailConfirm">
+              </div>
+              <div class="btn-wrap">
+                <a href="#" class="forget-password">Create Account through google?</a>
+              </div>
+              <div class="btn-wrap">
+                <button type="submit" class="btn login-btn">SignUp</button>
+              </div>
+            </div>
+        </form>
+
+
+  </div>
+</section>
+
+<form (ngSubmit)="onSubmit(myForm.value)" #myForm = "ngForm">
+  <input name="value" #val="ngModel" type="text" required ngModel>
+  <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid" >Submit</button>
+</form>
