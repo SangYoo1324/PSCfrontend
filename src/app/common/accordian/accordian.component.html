@@ -1,0 +1,77 @@
+<div class="accordion" id="accordionExample">
+<!--  CPU, GPU, RAM 등등 loop -->
+  <ng-container *ngFor = "let item of accordianConfigList; let j = index">
+    <div class="accordion-item" >
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+item.name" aria-expanded="true" aria-controls="collapseOne">
+                {{item.name}}
+        </button>
+      </h2>
+
+
+      <div [ngClass]="{'show': j ===0}"  [id]="item.name" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <form action=""></form>
+<!--          property: cpu, gpu,etc // options: graphiccard name, cpu name,-->
+          <div *ngFor="let property of item.options; let i = index" class="option-wrap">
+            <input [id]="property.name" [name]="item.name" type="radio"
+                   [value]="property.name"
+                   [(ngModel)]="selectedConfig[j].options[0].name">
+            <label (click)="push(property.name, j)">{{property.name}}</label>
+            <div class="price"> + {{property.price}}&nbsp;$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<button (click)="test()">test</button>
+
+<style>
+  .accordion-button{
+    background-color: gray;
+  }
+  .accordion-item{
+    background-color: #4c4f57;
+  }
+
+
+  label{
+    display: block;
+    margin-right: 1rem;
+  }
+
+  .option-wrap{
+    width: 90%;
+    margin: 1rem auto;
+
+  }
+
+
+  /*radio styling*/
+  .accordion-body {
+    padding: 15px 10px;
+  }
+  .accordion-body input[type=radio]{
+    display: block;
+  }
+  .accordion-body input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+  }
+  .accordion-body input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+  }
+  .accordion-body input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+  }
+</style>

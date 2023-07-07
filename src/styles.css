@@ -21,15 +21,18 @@ section{
   font-family: "LotteMartHappyme";
   font-size: 25px;
   color: #1e2125;
-  /*background: #1e2125;*/
-  padding: 5rem 0;
-  /*background: #1e2125;*/
+  padding: 4rem 0;
+  background: #1e2125;
 }
 
+.last-section{
+  padding-bottom: 0;
+}
 
 .router-active{
 
   border-bottom: 2px solid azure;
   cursor: pointer;
 }
+
 

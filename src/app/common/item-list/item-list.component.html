@@ -1,0 +1,50 @@
+<section>
+  <div class="container">
+    <div class="total">
+      <h3> {{(items |async).length}} items</h3>
+    </div>
+    <div class="row">
+      <div *ngFor="let item  of (items |async); let i = index" class="col-lg-4 item">
+        <div class="card" style="width: 90%;">
+          <img [src]="item.url" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <div class="card-text">
+<!--              config 의 name(cpu,gpu 등) 첫번째, 두번째만 가져와서 그 첫번째 두번째 값만 넣어줌 -->
+              <span>{{item.availConfig[0].name}}</span>
+              <p>{{item.availConfig[0].options[0].name}}</p>
+              <span>{{item.availConfig[1].name}}</span>
+              <p>{{item.availConfig[1].options[0].name}}</p>
+            </div>
+            <a routerLink="/gaming/customize/{{category1}}/{{category2}}/{{item.id}}" class="btn customize-btn">Customize</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .total{
+    border-bottom: 1px solid white;
+    color: white;
+    width: 97%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  .row>*{
+    margin: 1rem auto;
+  }
+  .card{
+    width: 500px;
+    margin:1rem auto;
+  }
+  .card-body{
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+  }
+  .customize-btn{
+    background-color: #cc181e;
+  }
+</style>

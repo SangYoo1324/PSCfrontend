@@ -82,8 +82,8 @@ input[type=text], input[type=password], input[type=email]{
   padding: 0.5rem 5rem;
 
 }
-.forget-password{
-  margin-left: 2.5rem;
+.google-login-link{
+  /*margin-left: 2.5rem;*/
   color: #cc181e;
 }
 
@@ -104,6 +104,13 @@ input[type=checkbox]{
 }
 /*right:end */
 
+.warning{
+  color: #cc181e;
+}
+
+input.ng-invalid.ng-touched{
+  border-bottom: red 1px solid;
+}
 
 /*checkbox related css */
 .wrap input[type="checkbox"]{
@@ -177,10 +184,10 @@ input[type=checkbox]{
   padding-left: 0rem;
 }
 
-  .forget-password{
-    margin-left: 1rem;
-    font-size: 0.7rem;
-  }
+  /*.google-login-link{*/
+  /*  margin-left: 1rem;*/
+  /*  font-size: 0.7rem;*/
+  /*}*/
 
   .create_account, .google_login{
     width: 100%;

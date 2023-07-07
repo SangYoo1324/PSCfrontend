@@ -1,0 +1,161 @@
+
+<app-page-title #pageTitle></app-page-title>
+
+<section>
+  <div class="container">
+    <div class="btn-wrap">
+      <a routerLink="/{{category1}}"> Back to List</a>
+    </div>
+    <div class="row">
+      <div class="image col-lg-6">
+        <div class="overview"><h4>{{(item |async).name}}</h4></div>
+        <img [src]="(item |async).url" alt="">
+      </div>
+
+      <div class="basic-config col-lg-6">
+        <div class="specification"><h4>Basic Config</h4></div>
+        <div class="specification-wrap">
+          <label>Size</label>
+          <ul>
+            <li>{{(item |async).size}}</li>
+          </ul>
+          <label>Bays</label>
+          <ul>
+            <li>(item |async).bays</li>
+          </ul>
+          <label>Ports</label>
+          <ul>
+            <li *ngFor="let port of (item |async).ports">{{port}}</li>
+          </ul>
+          <label>Special</label>
+          <ul>
+            <li *ngFor="let sp of (item |async).special">{{sp}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="title-wrap">
+      <h3>Customize Options</h3>
+      <h5>Check & Select optional configurations you want to set up!(price change will be reflected
+        automatically on the bottom of the page)</h5>
+    </div>
+    <app-accordian
+    [accordianConfigList]="(item |async).availConfig"
+    (selectedConfigEmitter)="selectedConfigEventReceiver($event)"
+    [selectedConfig]="selectedConfigInput"
+    ></app-accordian>
+  </div>
+</section>
+
+<section class="summary">
+  <div class="container summary-container">
+    <div class="total-wrap">
+      <span>Configuration Total : </span><span> {{totalPrice}} $</span>
+    </div>
+    <div class="btn-wrap-summary">
+      <button class="btn add-to-cart">Add to Cart</button>
+      <button class="btn checkout">Proceed to check out</button>
+    </div>
+  </div>
+
+</section>
+
+
+
+<style>
+
+  h4{
+    padding-top: 1rem;
+    margin-left: 2rem;
+  }
+
+  .row{
+    margin-top: 2rem;
+  }
+
+  .btn-wrap{
+    border-bottom: 2px solid white;
+    height: 3rem;
+  }
+  .btn-wrap>a{
+    color: white;
+    text-decoration: none;
+  }
+  .btn-wrap>a:hover{
+    color: #cc181e;
+    text-decoration: underline;
+  }
+
+  /*left */
+  .image{
+    background-color: black;
+    padding: 0 0.2rem;
+  }
+  .overview{
+    color: white;
+    background-color: gray;
+    padding: .5rem 0;
+  }
+  .image>img{
+    display: block;
+    width: 100%;
+    height: 400px;
+    padding: 2rem;
+    margin: 1rem auto;
+
+  }
+  /*right side */
+  .basic-config{
+    background-color: black;
+    color: white;
+    padding: 0;
+  }
+  .specification{
+    background-color: gray;
+    padding: 0.5rem 0;
+  }
+
+  .specification-wrap{
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .title-wrap{
+    color: white;
+    margin-bottom: 4rem;
+  }
+
+
+  /*summary */
+  section.summary{
+  }
+  .summary-container{
+    display: flex;
+    justify-content: space-between;
+    border-top:2px solid white;
+    padding-top: 2rem;
+  }
+  .total-wrap{
+    color: white;
+    width: 50%;
+  }
+  .add-to-cart{
+    display: block;
+    background-color: #cc181e;
+    color: white;
+  }
+  .checkout{
+    margin-left: 1rem;
+    display: block;
+    background-color: #3b5998;
+    color: white;
+  }
+
+  .btn-wrap-summary{
+    display: flex;
+  }
+</style>

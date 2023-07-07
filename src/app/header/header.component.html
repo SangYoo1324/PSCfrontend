@@ -12,19 +12,22 @@
     <div class="collapse navbar-collapse justify-content-end"   id="navbarSupportedContent" #navBarContent>
       <ul class="navbar-nav mb-lg-0">
         <li class="nav-item">
-          <a routerLinkActive="router-active" routerLink="/visitorsInfo" class="nav-link active" aria-current="page" >Gaming PC</a>
+          <a routerLinkActive="router-active" routerLink="/gaming" class="nav-link active" aria-current="page" >Gaming PC</a>
         </li>
         <li class="nav-item">
-          <a routerLinkActive="router-active" routerLink="/childrenYouth" class="nav-link active" aria-current="page"  >Workstation PC</a>
+          <a routerLinkActive="router-active" routerLink="/workstation" class="nav-link active" aria-current="page"  >Workstation PC</a>
         </li>
         <li class="nav-item">
-          <a routerLinkActive="router-active" routerLink="/ministries" class="nav-link active" aria-current="page" >Accessories</a>
+          <a routerLinkActive="router-active" routerLink="/accessories" class="nav-link active" aria-current="page" >Accessories</a>
         </li>
         <li class="nav-item">
           <div routerLinkActive="router-active" class="nav-link active" aria-current="page" >
-            <button routerLink="/login" type="button" id="login-btn" class="btn btn-success">Login</button>
+            <button *ngIf="!isLoggedIn()" routerLink="/login" type="button" id="login-btn" class="btn btn-success">Login</button>
+            <button *ngIf="isLoggedIn()"  (click)="logout()" type="button" id="logout-btn" class="btn btn-danger">LogOut</button>
             &nbsp; &nbsp;
             <i class="fa-solid fa-cart-shopping"></i>
+            &nbsp; &nbsp;
+            <i *ngIf="isLoggedIn()"  routerLink="/userProfile" class="fa-solid fa-user"></i>
           </div>
         </li>
 

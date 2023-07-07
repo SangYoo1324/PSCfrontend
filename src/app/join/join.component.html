@@ -6,20 +6,23 @@
   </div>
 
   <div class="container big-container">
-        <form class="row">
+        <form class="row" #joinForm = "ngForm" (ngSubmit)="onSubmit(joinForm.value)">
           <div class="col-lg-6 left">
           <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="" id="username" aria-describedby="emailHelp">
+            <label for="nickname" class="form-label">Username</label>
+            <input #nickname="ngModel" name="nickname" required [(ngModel)]="member.nickname" type="text" class="" id="nickname" aria-describedby="emailHelp">
+            <div class="warning"><small *ngIf="nickname.invalid && nickname.touched">This is required field</small></div>
           </div>
           <div class="mb-3 ">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="" id="password">
+            <input #password="ngModel" name="password" required [(ngModel)]="member.password" type="password" class="" id="password">
+            <div class="warning"><small *ngIf="password.invalid && password.touched">This is required field</small></div>
           </div>
 
             <div class="mb-3 ">
               <label for="email" class="form-label">email</label>
-              <input type="password" class="" id="email">
+              <input #email="ngModel" name="email" required [(ngModel)]="member.email" type="email" class="" id="email">
+              <div class="warning"><small *ngIf="email.invalid && email.touched">This is required field</small></div>
             </div>
 
 
@@ -28,22 +31,29 @@
 
             <div class="col-lg-6 right">
               <div class="mb-3">
-                <label for="username" class="form-label">Confirm Username</label>
-                <input type="text" class="" id="usernameConfirm" aria-describedby="emailHelp">
+                <label for="nickname" class="form-label">Confirm Username</label>
+                <input name="usernameConfirm" required [(ngModel)]="nicknameConfirm" type="text" class="" id="usernameConfirm" aria-describedby="emailHelp">
+                <div class="warning" *ngIf="joinForm.controls['usernameConfirm'] && joinForm.controls['usernameConfirm'].dirty && member.nickname !== nicknameConfirm">
+                  <small>The username does not match</small></div>
+
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Confirm Password</label>
-                <input type="password" class="" id="passwordConfirm">
+                <input name="passwordConfirm" required [(ngModel)]="passwordConfirm" type="password" class="" id="passwordConfirm">
+                <div class="warning" *ngIf="joinForm.controls['passwordConfirm'] && joinForm.controls['passwordConfirm'].dirty && member.password !== passwordConfirm">
+                  <small>The password does not match</small></div>
               </div>
               <div class="mb-3">
                 <label for="emailConfirm" class="form-label">Confirm email</label>
-                <input type="email" class="" id="emailConfirm">
+                <input name="emailConfirm" required [(ngModel)]="emailConfirm" type="email" class="" id="emailConfirm">
+                <div class="warning" *ngIf="joinForm.controls['emailConfirm'] && joinForm.controls['emailConfirm'].dirty && member.email !== emailConfirm">
+                  <small>The email does not match</small></div>
               </div>
               <div class="btn-wrap">
-                <a href="#" class="forget-password">Create Account through google?</a>
+                <a href="#" class="google-login-link">Create Account through google?</a>
               </div>
               <div class="btn-wrap">
-                <button type="submit" class="btn login-btn">SignUp</button>
+                <button type="submit" class="btn login-btn" [disabled]="!joinForm.valid">SignUp</button>
               </div>
             </div>
         </form>
@@ -52,7 +62,9 @@
   </div>
 </section>
 
-<form (ngSubmit)="onSubmit(myForm.value)" #myForm = "ngForm">
-  <input name="value" #val="ngModel" type="text" required ngModel>
-  <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid" >Submit</button>
-</form>
+
+<!--testing for CORS config -->
+<!--<form (ngSubmit)="onSubmit(myForm.value)" #myForm = "ngForm">-->
+<!--  <input name="value" #val="ngModel" type="text" required ngModel>-->
+<!--  <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid" >Submit</button>-->
+<!--</form>-->

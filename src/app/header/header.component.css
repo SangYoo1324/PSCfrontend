@@ -7,6 +7,12 @@ a.navbar-brand{
   padding: 1rem;
   color: #cc181e;
 }
+
+.nav-item{
+  display: flex;
+  align-items: center;
+}
+
 .nav-item>a{
   padding: 1rem 0.2rem;
   font-size: 20px;
@@ -53,6 +59,14 @@ a.navbar-brand{
   background: rgba(0,0,0,0.9);
 }
 
+
+.fa-user:hover{
+  cursor: pointer;
+}
+
+.fa-solid:hover{
+  color: #cc181e;
+}
 
 
 

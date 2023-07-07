@@ -1,9 +1,23 @@
-<section class="dummy">
-  <div class="container">
-
-  </div>
+<section>
+  <app-carousel [images]="mainSlideImages"
+                [boxShadow]="'white'"
+                [subTitleColor]="'white'"
+  ></app-carousel>
 </section>
 
+
+<section>
+  <app-intro></app-intro>
+</section>
+
+<section>
+  <app-testimonial></app-testimonial>
+</section>
+
+<section class="last-section">
+  <app-deals></app-deals>
+</section>
+<button (click)="adminTest()">Admin access Test</button>
 <style>
   .dummy{
     width: 100%;

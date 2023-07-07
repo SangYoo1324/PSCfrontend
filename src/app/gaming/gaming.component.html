@@ -1,0 +1,23 @@
+<app-page-title #pageTitle></app-page-title>
+<section>
+  <div class="container">
+    <app-section-title #lapTopSectionTitle></app-section-title>
+    <app-item-list
+      [items] = "gamingLapTops"
+      [category1]="'gaming'"
+      [category2]="'laptop'"
+    ></app-item-list>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <app-section-title #desktopSectionTitle></app-section-title>
+    <app-item-list
+      [items] = "gamingDesktops"
+      [category1]="'gaming'"
+      [category2]="'desktop'"
+    ></app-item-list>
+  </div>
+</section>

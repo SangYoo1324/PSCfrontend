@@ -1,0 +1,32 @@
+<!-- Modal -->
+<div class="modal fade show"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display': openModal ? 'block': 'none' }" >
+  <div class="modal-dialog my-custom-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Choose Social Login Method</h1>
+        <button type="button" class="btn-close"
+        (click)="closeBtnClicked()"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="isLoggedin === false" class="social-btn-wrap">
+          <asl-google-signin-button width="350" size="medium" type="standard"></asl-google-signin-button>
+          <div class="facebook_login"> <i class="fa-brands fa-facebook-f"></i> &nbsp;&nbsp; <span>Login with Facebook</span>  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        </div>
+
+        <div *ngIf="isLoggedin === true">
+          <div class="form-group">
+            <img [src]="socialUser?.photoUrl" alt="">
+            <h2>Hi, {{socialUser?.firstName}}</h2>
+            <p>Please proceed to 1 touch LogIn!</p>
+            <a class="process" (click)="signIn()">continue ></a>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal:end -->
+

@@ -1,0 +1,93 @@
+<section id="intro">
+
+  <div class="container">
+    <app-section-title #sectionTitleComponent></app-section-title>
+
+    <div class="row">
+      <div class="col-lg-6 left">
+      <div class="text-wrap">
+        <i class="fa-solid fa-wrench block"></i>
+        <h2>PC ASSEMBLE AND ONLINE SUPPORT</h2>
+        <h3>IN THE USA</h3>
+        <div class="bar bg-white h-[5px] w-[150px]"></div>
+        <a href="#">LEARN MORE</a>
+      </div>
+      </div>
+
+      <div class="col-lg-6 right">
+        <p>
+          &nbsp; &nbsp; &nbsp; &nbsp;If you’re searching for the cheapest Gaming PC made with inferior
+          products and questionable quality, you might as well leave
+          now. Puget Sound Customs PC only uses the highest quality performance
+          Gaming PC components available. Every single <b href="#" class="text-red-500">customized
+          Gaming PC</b>  and <b href="#" class="text-red-500">Gaming Laptop</b> is assembled right
+          here in the United States by highly trained and
+          incredibly skilled technicians and assembly engineers. In fact, that’s what most of our competitors do.
+          However, we choose to assemble all our Gaming PCs right
+          here in the United States because it gives us the best
+          control over manufacturing, performance, and overall
+          quality. And we’re thrilled to hire only the best PC
+          Builders in the country.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section{
+    background-image:linear-gradient(to right,rgba(0,0,0,.4),rgba(0,0,0,.9)
+    ), url("/assets/introduction.jpg");
+    background-size: cover;
+  }
+
+  .container{
+    color: white;
+  }
+  .right>p{
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+
+  .left{
+    display: flex;
+    align-items: center;
+  }
+
+  .text-wrap{
+    text-align: center;
+  }
+
+  .text-wrap>i{
+    font-size: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  .text-wrap>a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+    padding: 1.5rem 2.5rem;
+    border: 1px solid white;
+    width: 50%;
+    transition: background-color 0.5s ease;
+  }
+
+  .text-wrap>a:hover{
+    background-color: #cc181e;
+  }
+
+
+  @media (max-width: 767px) {
+    .right>p{
+      font-size: 1rem;
+    }
+    .text-wrap>a{
+      font-size: 1rem;
+    }
+  }
+
+
+</style>

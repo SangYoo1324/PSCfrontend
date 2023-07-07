@@ -1,0 +1,86 @@
+<!-- deals  -->
+<section class="deals">
+  <div class="container">
+    <app-section-title #sectionTitleComponent></app-section-title>
+
+    <div class="row">
+      <div class="deals_financing col-lg-4">
+        <i class="fa-solid fa-box"></i>
+        <h2 class="font-bold ">FINANCING</h2>
+        <p class="font-medium">Play Now and Pay Later</p>
+        <ul class="block">
+          <li>Easy to apply</li>
+          <li>No prepayment penalties</li>
+          <li>Up to 36 months of payment options</li>
+          <a class="learn_more block" href="#">LEARN MORE</a>
+        </ul>
+      </div>
+      <div class="deals_affiliates col-lg-4">
+        <i class="fa-solid fa-handshake"></i>
+        <h2 class="font-bold">AFFILIATES</h2>
+        <p class="font-medium">Join the Best</p>
+        <p>Partner up with the best custom PC system builder in the world
+          and earn extra cash! Become An Official Puget Sound Customs PC Affiliate Today!</p>
+        <a class="join block" routerLink="/login">JOIN</a>
+      </div>
+      <div class="deals_support col-lg-4">
+        <i class="fa-solid fa-phone"></i>
+        <h2 class="font-bold">SUPPORT</h2>
+        <p class="font-medium">24/7 US Based Support</p>
+        <p>
+          Once you join us, we will have you covered. With every system, ORIGIN
+          PC provides a free phone and online lifetime service guarantee.
+        </p>
+        <a class="learn_more" href="#">LEARN MORE</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- deals  -->
+
+
+<style>
+
+  .row>*:not(:last-child){
+    border-right: 1px solid lightgray;
+  }
+
+  .col-lg-4{
+    text-align: center;
+    padding: 1rem 3rem;
+    color: gray;
+  }
+
+  section{
+    background-color: white;
+  }
+  i{
+    color: #cc181e;
+    display: block;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .learn_more, .join{
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    color: #cc181e;
+    border: 1px solid #cc181e;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .learn_more:hover, .join:hover{
+
+    background-color: #cc181e;
+    color: white;
+    border: 1px solid white;
+  }
+
+  @media (max-width: 1024px) {
+    p, li{font-size:  1rem;}
+
+  }
+
+</style>
